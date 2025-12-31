@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Tarjeta Digital</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Estilos Generales */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #020c1b 0%, #0a192f 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #fff;
+        }
+
+        /* Contenedor de la Tarjeta */
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px); /* Efecto de vidrio esmerilado */
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px 30px;
+            width: 100%;
+            max-width: 350px;
+            text-align: center;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Foto de Perfil */
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid #00d2ff; /* Color del borde de la foto */
+            object-fit: cover;
+            margin-bottom: 20px;
+            box-shadow: 0 0 20px rgba(0, 210, 255, 0.3);
+        }
+
+        /* Textos */
+        h1 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        .job-title {
+            color: #ccc;
+            font-size: 0.9rem;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Botones de contacto */
+        .links-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            padding: 12px;
+            border-radius: 10px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn i {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        /* Colores específicos para cada red */
+        .whatsapp {
+            background-color: #25D366;
+            color: #fff;
+        }
+        .whatsapp:hover { background-color: #20b857; box-shadow: 0 0 15px rgba(37, 211, 102, 0.4); }
+
+        .email {
+            background-color: #ea4335;
+            color: #fff;
+        }
+        .email:hover { background-color: #c93a2e; box-shadow: 0 0 15px rgba(234, 67, 53, 0.4); }
+
+        .linkedin {
+            background-color: #0077b5;
+            color: #fff;
+        }
+        .linkedin:hover { background-color: #006097; box-shadow: 0 0 15px rgba(0, 119, 181, 0.4); }
+
+        .github {
+            background-color: #333;
+            color: #fff;
+            border: 1px solid #555;
+        }
+        .github:hover { background-color: #000; box-shadow: 0 0 15px rgba(255, 255, 255, 0.1); }
+
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <img src="FOTOYO.jpeg" alt="Foto de Perfil" class="profile-img">
+        
+        <h1>Tu Nombre Aquí</h1>
+        <p class="job-title">Desarrollador de Software</p>
+
+        <div class="links-container">
+            
+            <a href="https://wa.me/50240679081" class="btn whatsapp" target="_blank">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+
+            <a href="mailto:franciscojmendez04@gmail.com" class="btn email">
+                <i class="fas fa-envelope"></i> Enviar Correo
+            </a>
+
+            <a href="https://www.linkedin.com/in/francisco-javier-cetino-mendez-459840241" class="btn linkedin" target="_blank">
+                <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+
+            <a href="https://github.com/Franciscoj04" class="btn github" target="_blank">
+                <i class="fab fa-github"></i> GitHub
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
