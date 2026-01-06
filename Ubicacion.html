@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestra Ubicación</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Estilos base (Tema Azul Marino) */
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body {
+            background: linear-gradient(135deg, #020c1b 0%, #0a192f 100%);
+            min-height: 100vh; color: #fff; padding: 30px 20px;
+        }
+        .container { max-width: 600px; margin: 0 auto; text-align: center; }
+
+        /* Header */
+        .header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 30px; }
+        .page-title { font-size: 1.5rem; font-weight: 700; }
+        .back-btn {
+            text-decoration: none; color: #a0aec0; padding: 8px 12px; 
+            background: rgba(255,255,255,0.05); border-radius: 8px; font-size: 0.9rem;
+        }
+
+        /* Tarjetas de Sección */
+        .section-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+        h2.section-title { font-size: 1.2rem; margin-bottom: 15px; color: #33ccff; }
+        
+        /* Video Responsive */
+        .video-wrapper {
+            position: relative; padding-bottom: 56.25%; height: 0; 
+            border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1);
+        }
+        .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+
+        /* Mapa de Waze iframe */
+        .waze-map-container {
+            height: 350px; width: 100%; border-radius: 12px; overflow: hidden; margin-bottom: 20px;
+            border: 2px solid #33ccff; /* Borde estilo Waze */
+        }
+        .waze-map-container iframe { width: 100%; height: 100%; border: none; }
+
+        /* Botón Grande "Ir Ahora" */
+        .go-btn {
+            display: inline-block; width: 100%; padding: 15px;
+            background-color: #33ccff; color: #fff; font-weight: 800; text-decoration: none;
+            border-radius: 50px; font-size: 1.2rem;
+            box-shadow: 0 0 20px rgba(51, 204, 255, 0.3);
+            transition: transform 0.2s;
+        }
+        .go-btn:hover { transform: scale(1.03); background-color: #00aadd; }
+        .go-btn i { margin-right: 10px; }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1 class="page-title">📍 Ubicación</h1>
+            <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Volver</a>
+        </div>
+
+        <div class="section-card">
+            <h2 class="section-title"><i class="fas fa-video"></i> Video Guía: Cómo llegar</h2>
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Video Guía" allowfullscreen></iframe>
+            </div>
+            <p style="margin-top:15px; color:#ccc; font-size:0.9rem;">
+                Sigue las referencias visuales del video para no perderte. Estamos frente al edificio azul.
+            </p>
+        </div>
+
+        <div class="section-card">
+            <h2 class="section-title"><i class="fab fa-waze"></i> Mapa en Vivo</h2>
+            
+            <div class="waze-map-container">
+                <iframe src="https://embed.waze.com/iframe?zoom=16&lat=14.634915&lon=-90.506882&ct=livemap" allowfullscreen></iframe>
+            </div>
+
+            <a href="https://waze.com/ul?ll=14.634915,-90.506882&navigate=yes" class="go-btn" target="_blank">
+                <i class="fas fa-car"></i> IR CON WAZE
+            </a>
+        </div>
+
+    </div>
+
+</body>
+</html>

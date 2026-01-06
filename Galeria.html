@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Proyectos Detallados</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* --- ESTILOS BASE (IGUAL QUE ANTES) --- */
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body {
+            background: linear-gradient(135deg, #020c1b 0%, #0a192f 100%);
+            min-height: 100vh; color: #fff; padding: 30px 20px;
+        }
+        .container { max-width: 1000px; margin: 0 auto; } /* Un poco más ancho para que quepan 4 fotos */
+
+        /* Encabezado y botón de regreso */
+        .header {
+            display: flex; justify-content: space-between; align-items: center;
+            margin-bottom: 50px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 20px;
+        }
+        .page-title { font-size: 1.8rem; font-weight: 700; }
+        .back-btn {
+            text-decoration: none; color: #a0aec0; display: flex; align-items: center;
+            padding: 10px 15px; background: rgba(255,255,255,0.05); border-radius: 8px; transition: all 0.3s ease;
+        }
+        .back-btn:hover { background: rgba(255,255,255,0.1); color: #fff; }
+        .back-btn i { margin-right: 8px; }
+
+
+        /* --- NUEVOS ESTILOS PARA ESTRUCTURA POR PROYECTOS --- */
+
+        /* Bloque contenedor de cada proyecto */
+        .project-block {
+            background: rgba(255, 255, 255, 0.02); /* Fondo muy sutil para separar */
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 50px; /* Espacio entre proyectos */
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Título principal del proyecto (Ej: Proyecto 1) */
+        h2.project-main-title {
+            font-size: 1.6rem;
+            color: #4facfe; /* Azul brillante */
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        h2.project-main-title i { margin-right: 10px; color: #a0aec0; }
+
+        /* Descripción del proyecto */
+        .project-description {
+            color: #ccc;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            font-size: 0.95rem;
+            max-width: 800px;
+        }
+
+        /* Subtítulos (Fotos / Video) */
+        h3.subsection-title {
+            font-size: 1.1rem;
+            color: #a0aec0;
+            margin: 25px 0 15px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        /* --- Grids (Reutilizados y ajustados) --- */
+
+        /* Grid para 4 fotos */
+        .photo-grid {
+            display: grid;
+            /* Ajustado para intentar mostrar 4 columnas en pantallas grandes, 2 en medianas, 1 en pequeñas */
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .photo-item {
+            border-radius: 10px; overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: transform 0.3s ease; height: 180px; /* Altura fija un poco más pequeña */
+        }
+        .photo-item:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(41, 121, 255, 0.2); }
+        .photo-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+        /* Contenedor de video (para 1 solo video grande) */
+        .single-video-container {
+            max-width: 700px; /* No dejar que el video se haga gigante */
+            margin-top: 20px;
+        }
+        /* Estilos para que YouTube sea responsive (mismos de antes) */
+        .video-responsive {
+            position: relative; padding-bottom: 56.25%; height: 0; border-radius: 12px;
+            overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1);
+        }
+        .video-responsive iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header class="header">
+            <h1 class="page-title">Portafolio de Proyectos</h1>
+            <a href="index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i> Regresar
+            </a>
+        </header>
+
+        <div class="project-block">
+            <h2 class="project-main-title"><i class="fas fa-rocket"></i> Proyecto 1: [Nombre del Proyecto]</h2>
+            <p class="project-description">
+                Aquí escribe una breve descripción de este proyecto. Explica qué problema resuelve y qué tecnologías utilizaste (ej. Python, SQL, React). Esto da contexto antes de ver las imágenes.
+            </p>
+
+            <h3 class="subsection-title"><i class="far fa-images"></i> Galería de Imágenes</h3>
+            <div class="photo-grid">
+                <div class="photo-item">
+                    <img src="https://via.placeholder.com/400x300/0f2245/4facfe?text=P1+Foto+1" alt="Proyecto 1 Foto 1">
+                </div>
+                <div class="photo-item">
+                    <img src="https://via.placeholder.com/400x300/0f2245/4facfe?text=P1+Foto+2" alt="Proyecto 1 Foto 2">
+                </div>
+                <div class="photo-item">
+                    <img src="https://via.placeholder.com/400x300/0f2245/4facfe?text=P1+Foto+3" alt="Proyecto 1 Foto 3">
+                </div>
+                <div class="photo-item">
+                    <img src="https://via.placeholder.com/400x300/0f2245/4facfe?text=P1+Foto+4" alt="Proyecto 1 Foto 4">
+                </div>
+            </div>
+
+            <h3 class="subsection-title"><i class="fab fa-youtube"></i> Video Demostrativo</h3>
+             <div class="single-video-container">
+                <div class="video-responsive">
+                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Video Proyecto 1" allowfullscreen></iframe>
+                </div>
+             </div>
+        </div>
+        <div class="project-block" style="margin-top: 60px;">
+            <h2 class="project-main-title"><i class="fas fa-code"></i> Proyecto 2: [Nombre del Segundo Proyecto]</h2>
+            <p class="project-description">
+                Descripción para el segundo proyecto. Quizás este sea un proyecto de análisis de datos o una aplicación web diferente.
+            </p>
+
+            <h3 class="subsection-title"><i class="far fa-images"></i> Galería de Imágenes</h3>
+            <div class="photo-grid">
+                <div class="photo-item"><img src="https://via.placeholder.com/400x300/1a1033/a74ffe?text=P2+Foto+1" alt="P2 Foto 1"></div>
+                <div class="photo-item"><img src="https://via.placeholder.com/400x300/1a1033/a74ffe?text=P2+Foto+2" alt="P2 Foto 2"></div>
+                <div class="photo-item"><img src="https://via.placeholder.com/400x300/1a1033/a74ffe?text=P2+Foto+3" alt="P2 Foto 3"></div>
+                <div class="photo-item"><img src="https://via.placeholder.com/400x300/1a1033/a74ffe?text=P2+Foto+4" alt="P2 Foto 4"></div>
+            </div>
+
+             <h3 class="subsection-title"><i class="fab fa-youtube"></i> Video Demostrativo</h3>
+             <div class="single-video-container">
+                <div class="video-responsive">
+                    <iframe src="https://www.youtube.com/embed/lxIlDjpvF20" title="Video Proyecto 2" allowfullscreen></iframe>
+                </div>
+             </div>
+        </div>
+        <div class="project-block" style="margin-top: 60px;">
+            <h2 class="project-main-title"><i class="fas fa-database"></i> Proyecto 3: [Nombre del Tercer Proyecto]</h2>
+            <p class="project-description">
+                Descripción final. Aquí puedes poner tu proyecto más reciente o el que más te enorgullece.
+            </p>
+
+            <h3 class="subsection-title"><i class="far fa-images"></i> Galería de Imágenes</h3>
+            <div class="photo-grid">
+                <div class="photo-item"><img src="https://via.placeholder.com/400x300/002626/00c4a7?text=P3+Foto+1" alt="P3 Foto 1"></div>
+                <div class="photo-item"><img src="https://via.placeholder.com/400x300/002626/00c4a7?text=P3+Foto+2" alt="P3 Foto 2"></div>
+                <div class="photo-item"><img src="https://via.placeholder.com/400x300/002626/00c4a7?text=P3+Foto+3" alt="P3 Foto 3"></div>
+                <div class="photo-item"><img src="https://via.placeholder.com/400x300/002626/00c4a7?text=P3+Foto+4" alt="P3 Foto 4"></div>
+            </div>
+
+             <h3 class="subsection-title"><i class="fab fa-youtube"></i> Video Demostrativo</h3>
+             <div class="single-video-container">
+                <div class="video-responsive">
+                    <iframe src="https://www.youtube.com/embed/EngW7tLk6R8" title="Video Proyecto 3" allowfullscreen></iframe>
+                </div>
+             </div>
+        </div>
+        </div>
+    
+    <div style="height: 50px;"></div>
+
+</body>
+</html>
