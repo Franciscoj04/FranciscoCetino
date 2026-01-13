@@ -3,127 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Tarjeta Digital</title>
+    <title>Francisco Cetino - Desarrollador</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Estilos Generales */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        
         body {
             background: linear-gradient(135deg, #020c1b 0%, #0a192f 100%);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            color: #fff;
+            display: flex; justify-content: center; align-items: center;
+            min-height: 100vh; color: #fff; padding: 20px; padding-bottom: 60px;
         }
 
-        /* Contenedor de la Tarjeta */
+        /* Tarjeta */
         .card {
             background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px); /* Efecto de vidrio esmerilado */
+            backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 40px 30px;
-            width: 100%;
-            max-width: 350px;
-            text-align: center;
+            border-radius: 20px; padding: 40px 30px;
+            width: 100%; max-width: 350px; text-align: center;
             box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
             transition: transform 0.3s ease;
         }
+        .card:hover { transform: translateY(-5px); }
 
-        .card:hover {
-            transform: translateY(-5px);
-        }
-
-        /* Foto de Perfil */
+        /* Foto */
         .profile-img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            border: 3px solid #00d2ff; /* Color del borde de la foto */
-            object-fit: cover;
-            margin-bottom: 20px;
-            box-shadow: 0 0 20px rgba(0, 210, 255, 0.3);
+            width: 120px; height: 120px; border-radius: 50%;
+            border: 3px solid #00d2ff; object-fit: cover;
+            margin-bottom: 20px; box-shadow: 0 0 20px rgba(0, 210, 255, 0.3);
         }
 
         /* Textos */
-        h1 {
-            font-size: 1.5rem;
-            margin-bottom: 5px;
-            font-weight: 700;
-        }
+        h1 { font-size: 1.5rem; margin-bottom: 5px; font-weight: 700; }
+        .job-title { color: #ccc; font-size: 0.9rem; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1px; }
 
-        .job-title {
-            color: #ccc;
-            font-size: 0.9rem;
-            margin-bottom: 25px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* Botones de contacto */
-        .links-container {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
+        /* Botones */
+        .links-container { display: flex; flex-direction: column; gap: 15px; }
+        
         .btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            padding: 12px;
-            border-radius: 10px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
+            display: flex; align-items: center; justify-content: center;
+            text-decoration: none; padding: 12px; border-radius: 10px;
+            font-weight: 600; transition: all 0.3s ease; color: #fff;
         }
+        .btn i { margin-right: 10px; font-size: 1.2rem; }
 
-        .btn i {
-            margin-right: 10px;
-            font-size: 1.2rem;
-        }
-
-        /* Colores específicos para cada red */
-        .whatsapp {
-            background-color: #25D366;
-            color: #fff;
-        }
+        /* --- COLORES DE LOS BOTONES --- */
+        
+        /* WhatsApp */
+        .whatsapp { background-color: #25D366; }
         .whatsapp:hover { background-color: #20b857; box-shadow: 0 0 15px rgba(37, 211, 102, 0.4); }
 
-        .email {
-            background-color: #ea4335;
-            color: #fff;
-        }
+        /* Email */
+        .email { background-color: #ea4335; }
         .email:hover { background-color: #c93a2e; box-shadow: 0 0 15px rgba(234, 67, 53, 0.4); }
 
-        .portfolio-btn {
-            background: linear-gradient(45deg, #00cdac, #02aab0); /* Un gradiente turquesa */
-            color: #fff;
-            border: none;
-        }
-        .portfolio-btn:hover {
-            box-shadow: 0 0 20px rgba(0, 205, 172, 0.5);
-            transform: scale(1.02);
-        }
+        /* LinkedIn (Nuevo) */
+        .linkedin { background-color: #0077b5; }
+        .linkedin:hover { background-color: #005e93; box-shadow: 0 0 15px rgba(0, 119, 181, 0.4); }
 
+        /* GitHub (Nuevo) */
+        .github { background-color: #333; border: 1px solid rgba(255,255,255,0.2); }
+        .github:hover { background-color: #000; box-shadow: 0 0 15px rgba(255, 255, 255, 0.2); border-color: #fff; }
 
-       .waze {
-            background-color: #33ccff; /* Color Waze clásico */
-            color: #fff; 
+        /* --- Footer --- */
+        .creator-footer {
+            position: fixed; bottom: 15px; left: 0; width: 100%;
+            text-align: center; font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.4); z-index: 1000; pointer-events: none;
         }
-        .waze:hover {
-            background-color: #00aadd;
-            box-shadow: 0 0 15px rgba(51, 204, 255, 0.4);
+        .creator-footer a {
+            pointer-events: auto; color: #00d2ff; font-weight: 600;
+            text-decoration: none; transition: color 0.3s ease;
         }
+        .creator-footer a:hover { color: #fff; text-shadow: 0 0 10px rgba(0, 210, 255, 0.8); text-decoration: underline; }
 
     </style>
 </head>
@@ -145,14 +98,22 @@
                 <i class="fas fa-envelope"></i> Enviar Correo
             </a>
 
-            <a href="Galeria.html" class="btn portfolio-btn">
-                <i class="fas fa-photo-video"></i> Portafolio
+            <a href="https://www.linkedin.com/in/francisco-javier-cetino-mendez-459840241/" class="btn linkedin" target="_blank">
+                <i class="fab fa-linkedin"></i> LinkedIn
             </a>
 
-            <a href="Ubicacion.html" class="btn waze">
-                <i class="fab fa-waze"></i> Ubicación y Mapa
+            <a href="https://github.com/Franciscoj04" class="btn github" target="_blank">
+                <i class="fab fa-github"></i> GitHub
             </a>
+
         </div>
+    </div>
+    
+    <div class="creator-footer">
+        <i class="fas fa-code"></i> Desarrollado por 
+        <a href="https://TU-USUARIO.github.io" target="_blank">
+            CodeBit
+        </a>
     </div>
 
 </body>
